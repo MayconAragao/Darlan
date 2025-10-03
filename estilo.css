@@ -1,0 +1,200 @@
+/* Seu arquivo styles.css FINAL */
+
+/* Cores definidas (D95B89: Rosa/Acento | 011526: Fundo Principal | 041E40: Fundo Header) */
+:root {
+  --fundo-principal: #011526;
+  --fundo-destaque: #041e40;
+  --acento: #d95b89;
+  --texto-claro: #f4f4f9;
+  --texto-escuro: #333333;
+  --borda-clara: #dddddd;
+}
+
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7; /* Maior espaçamento entre linhas */
+  background-color: var(--fundo-principal);
+  color: var(--texto-claro);
+}
+
+/* 1. Área do Cabeçalho e Logo Empresarial */
+.main-header {
+  width: 100%;
+  padding: 20px 40px;
+  background-color: var(--fundo-destaque); /* Azul mais claro (destaque) */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: none; /* Remoção da linha rosa */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo-img {
+  max-width: 180px;
+  height: auto;
+  display: block;
+}
+
+/* 2. Layout Principal (Flexbox e Fundo Branco) */
+#sobre-mim-servicos {
+  /* Padding para compensar o header fixo */
+  padding: 150px 20px 40px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-apresentacao {
+  display: flex; /* Flexbox para layout lado a lado */
+  max-width: 1200px;
+  width: 100%;
+  gap: 60px;
+  padding: 50px;
+  background-color: #ffffff; /* Fundo Branco */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: var(--texto-escuro);
+}
+
+/* 3. Foto Redonda (Lado Esquerdo) */
+.foto-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.perfil-foto {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%; /* Borda Redonda */
+  border: 5px solid var(--acento); /* Borda Rosa */
+}
+
+/* 4. Conteúdo (Lado Direito) */
+.conteudo-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título Principal "Sobre Mim" e Linha de Acento */
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 5px;
+  color: var(--texto-escuro);
+}
+
+.title-underline {
+  width: 120px;
+  height: 4px;
+  background-color: var(--acento);
+  margin-bottom: 40px;
+}
+
+/* Espaçamento dos Parágrafos */
+.conteudo-container p {
+  margin-bottom: 25px;
+}
+
+/* Subtítulos */
+h3 {
+  color: var(--acento);
+  font-size: 1.4em;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+/* Lista de Serviços */
+.servicos-lista {
+  list-style: none;
+  padding-left: 0;
+}
+
+.servicos-lista li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--borda-clara);
+}
+
+.servicos-lista li:last-child {
+  border-bottom: none;
+}
+
+/* Estilo dos Botões de Contato COM ANIMAÇÃO */
+.contatos-sociais {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.contatos-sociais a {
+  text-decoration: none;
+  color: var(--texto-escuro);
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 2px solid var(--acento);
+  border-radius: 8px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Animação suave */
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contatos-sociais a:hover {
+  background-color: var(--acento);
+  color: white;
+  /* Animação: eleva e adiciona sombra */
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(217, 91, 137, 0.4);
+}
+
+.contatos-sociais i {
+  margin-right: 8px;
+}
+
+/* 5. Responsividade (Celulares) */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 15px 20px;
+    position: static; /* Header deixa de ser fixo no mobile */
+  }
+
+  #sobre-mim-servicos {
+    padding: 40px 20px;
+  }
+
+  .container-apresentacao {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .perfil-foto {
+    max-width: 150px;
+    height: 150px;
+  }
+
+  .title-underline {
+    margin: 0 auto 30px auto;
+  }
+
+  .conteudo-container {
+    text-align: center;
+  }
+
+  .contatos-sociais {
+    justify-content: center;
+  }
+}
