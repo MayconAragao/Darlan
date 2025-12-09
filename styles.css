@@ -34,7 +34,7 @@ body {
 /* 1. Área do Cabeçalho e Logo Empresarial */
 .main-header {
   width: 100%;
-  padding: 20px 40px;
+  padding: 10px 30px;
   background-color: var(--fundo-destaque);
   position: fixed;
   top: 0;
